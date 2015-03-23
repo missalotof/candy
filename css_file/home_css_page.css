@@ -1,0 +1,56 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+}
+.navigation_back_ground{
+    margin: 0 auto;
+    padding: 0 auto;
+    background: dimgray;
+
+}
+ul li{
+    display: inline;
+    padding-left:10%;
+}
+ul li a{
+    font-size: 2vw;
+    color:gainsboro;
+    text-decoration:none;
+
+}
+ul li a:hover{
+    background:black;
+}
+a:hover {
+    color: white;
+}
+img{
+    height:25px;
+    width:25px;
+}
+.home_detail{
+    width: 80%;
+    margin: auto;
+    background: lightblue;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.welcome{
+    font-size: 500%;
+    padding-left: 2px;
+    margin-top: 10%;
+}
+.store_message{
+    font-size: 170%;
+}
+.button{
+    padding-left: 2px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
