@@ -47,7 +47,6 @@ function loadAllItems() {
 }
 localStorage.setItem('allItems', JSON.stringify(loadAllItems()));
 var store_list = JSON.parse(localStorage.getItem('allItems'));
-
     function show_store_list(){
         var html = '';
         html = html +'<tr class="list_header"><td id="h1">分类</td><td id="h2">名称</td><td id="h3">单价(元)</td><td id="h4">单位</td><td id="h5"></td>';
@@ -58,23 +57,33 @@ var store_list = JSON.parse(localStorage.getItem('allItems'));
             html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<button id='+btn_id+' type="button" onclick="addShoppingCart()">加入购物车</button></td>';
             html = html + '</tr>';
         }
-
        $('#add_table').html(html);
-        //console.log();
-
     }
 
 function addShoppingCart(){
     var btn_id = parseInt(event.srcElement.id,0);
     var cart_item = store_list[btn_id];
-    cart_item
+    cart_item.count = 1;
+    //console.log(cart_item.name);
     var arr_cart_list = JSON.parse(localStorage.getItem('cart_list'))||[];
-    for(var i in arr_cart_list){
-        if(arr_cart_list[i] !== )
+    if(arr_cart_list.length == 0){
+        arr_cart_list.push(cart_item);
+        console.log("first");
     }
-    arr_cart_list.push(cart_item);
+    else{
+        for(var i = 0; i < arr_cart_list.length; i ++){
+            if(arr_cart_list[i].barcode == cart_item.barcode){
+                arr_cart_list[i].count ++;
+                console.log("++");
+                break;
+            }
+            else if(arr_cart_list[i].barcode != cart_item.barcode && i == arr_cart_list.length-1){
+                arr_cart_list.push(cart_item);
+                console.log("push");
+            }
+        }
+    }
     localStorage.setItem('cart_list', JSON.stringify(arr_cart_list));
-
 }
 
 
