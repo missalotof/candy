@@ -68,18 +68,15 @@ function addShoppingCart(){
     var arr_cart_list = JSON.parse(localStorage.getItem('cart_list'))||[];
     if(arr_cart_list.length == 0){
         arr_cart_list.push(cart_item);
-        console.log("first");
     }
     else{
         for(var i = 0; i < arr_cart_list.length; i ++){
             if(arr_cart_list[i].barcode == cart_item.barcode){
                 arr_cart_list[i].count ++;
-                console.log("++");
                 break;
             }
             else if(arr_cart_list[i].barcode != cart_item.barcode && i == arr_cart_list.length-1){
                 arr_cart_list.push(cart_item);
-                console.log("push");
             }
         }
     }

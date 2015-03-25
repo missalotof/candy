@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../css_file/shopping_cart.css">
     <link rel="stylesheet" type="text/css" href="../css_file/home_css_page.css">
     <link rel="stylesheet" type="text/css" href="../css_file/product_list.css">
+    <script src="../js_file/jquery-2.1.3.js" type="text/javascript"></script>
+    <script src="../js_file/shopping_cart.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="container">
@@ -19,18 +21,15 @@
 </div>
 <div class="product_list">
     <div class="product_list_name">
-        商品列表
+        购物清单
     </div>
     <table id="add_table">
-        <tr class="list_header">
-            <th id="h11">分类</th>
-            <th id="h22">名称</th>
-            <th id="h33">单价(元)</th>
-            <th id="h44">单位</th>
-            <th id="h55">数量</th>
-            <th id="h66">小计</th>
-        </tr>
     </table>
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function(){
+        getShoppingList();
+    })
+</script>
