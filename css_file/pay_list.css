@@ -1,0 +1,17 @@
+.free_product_list_title {
+    border: thin black solid;
+    text-align: center;
+    background: grey;
+    height: 40px;
+    font-size: 30px;
+}
+.free_product_list{
+    border:thin black solid;
+    border-collapse:collapse;
+}
+.free_product_list td, .free_product_list th
+{
+    text-align: center;
+    font-size:25px;
+    border:1px solid #000000;
+}

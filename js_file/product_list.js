@@ -47,12 +47,64 @@ function loadAllItems() {
 }
 localStorage.setItem('allItems', JSON.stringify(loadAllItems()));
 var store_list = JSON.parse(localStorage.getItem('allItems'));
-function show_store_list() {
-    for(var i in store_list)
-        $("#add_table").dataTable().fnAddData(
-            [store_list[i].classify,store_list[i].name,store_list[i].price,store_list[i].unit,
-                "<button id='add_commodity ' style='background-color: lightblue;font-size: 20px'>My button</button>"]);
+
+    function show_store_list(){
+        var html = '';
+        html = html +'<tr class="list_header"><td id="h1">分类</td><td id="h2">名称</td><td id="h3">单价(元)</td><td id="h4">单位</td><td id="h5"></td>';
+        for(var i in store_list){
+            var btn_id = i.toString();
+            html = html +'<tr>';
+            var items = store_list[i];
+            html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<button id='+btn_id+' type="button" onclick="addShoppingCart()">加入购物车</button></td>';
+            html = html + '</tr>';
+        }
+
+       $('#add_table').html(html);
+        //console.log();
+
+    }
+
+function addShoppingCart(){
+    var btn_id = parseInt(event.srcElement.id,0);
+    var cart_item = store_list[btn_id];
+    cart_item
+    var arr_cart_list = JSON.parse(localStorage.getItem('cart_list'))||[];
+    for(var i in arr_cart_list){
+        if(arr_cart_list[i] !== )
+    }
+    arr_cart_list.push(cart_item);
+    localStorage.setItem('cart_list', JSON.stringify(arr_cart_list));
+
 }
-$("add_commodity").click(function(){
-    $("p").slideToggle();
-});
+
+
+//$("add_commodity").click(function(){
+//    $("p").slideToggle();
+//});
+//function addCartNum()
+//{
+//    $('#add_table').find('button').on('click',function()
+//    {
+//        var name=$(this).closest('tr').find('td').eq(1).text();
+//        addNum(name);
+//        refreshCart();
+//    })
+//}
+//function addNum(item)
+//{
+//    var lists = JSON.parse(localStorage.lists );
+//    lists[item] = parseInt(lists[item])+1;
+//    localStorage.lists = JSON.stringify(lists);
+//}
+//function refreshCart()
+//{
+//    var lists = JSON.parse(localStorage.lists );
+//    var num = 0;
+//    _(lists).each(function(list)
+//    {
+//        num = list+num;
+//    });
+//    $('#tableHead').find('#cartNumber').text(num);
+//}
+//localStorage.setItem('a',2);
+//localStorage.removeItem('a');
