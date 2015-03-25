@@ -6,9 +6,10 @@ function getShoppingList(){
     for(var i in cartList){
         html = html +'<tr>';
         var items = cartList[i];
-        html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+items.count+'</td><td></td>';
+        html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<div id="format"><input type="button" id="check1" value="-"><input type="text" id="check2" style="width:30px; text-align: center " value='+items.count+'><input type="button" id="check3" value="+"></div></td><td></td>';
         html = html + '</tr>';
 
     }
+
     $('#add_table').html(html);
 }
