@@ -16,3 +16,14 @@
 #h66{
     width: 400px;
 }
+.sum{
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 1px;
+}
+#payBtn{
+    margin-left: 77%;
+    margin-top:50px;
+    font-size: 20px;
+    background: deepskyblue;
+}
