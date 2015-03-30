@@ -37,8 +37,8 @@ function showPayShoppingList(){
     $('.free_product_list').html(free_html);
 
 }
-function remove(){
-localStorage.removeItem("cart_list");
+function all_remove(){
+localStorage.clear();
     console.log('adshfsajkdfhkdsjfhalj');
     location.reload();
 }

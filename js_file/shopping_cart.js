@@ -27,7 +27,6 @@ function getShoppingList(){
         if(items.freecount !== -1){
             html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<div id="format"><input type="button" id='+check1+' value="-" onclick="minus_btn();turn_to_product()"><input type="text" id="check2" style="width:30px; text-align: center " value='+items.count+'><input type="button" id='+check3+' value="+" onclick="add_btn()"></div></td><td>'+(items.count-items.freecount)*items.price+'元(原价：'+items.count*items.price+'元)</td>';
             html = html + '</tr>';
-
         }
         else if(items.freecount == -1){
             html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<div id="format"><input type="button" id='+check1+' value="-" onclick="minus_btn();turn_to_product()"><input type="text" id="check2" style="width:30px; text-align: center " value='+items.count+'><input type="button" id='+check3+' value="+" onclick="add_btn()"></div></td><td>'+items.count*items.price+'元</td>';
