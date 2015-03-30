@@ -54,7 +54,7 @@ var store_list = JSON.parse(localStorage.getItem('allItems'));
             var btn_id = i.toString();
             html = html +'<tr>';
             var items = store_list[i];
-            html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<button id='+btn_id+' type="button" onclick="addShoppingCart()">加入购物车</button></td>';
+            html = html + '<td>'+items.classify+'</td><td>'+items.name+'</td><td>'+items.price+'</td><td>'+items.unit+'</td><td>'+'<button id='+btn_id+'type="button" onclick="addShoppingCart()">加入购物车</button></td>';
             html = html + '</tr>';
         }
        $('#add_table').html(html);
@@ -82,7 +82,8 @@ function addShoppingCart(){
             }
         }
     }
-    localStorage.setItem('cart_list', JSON.stringify(arr_cart_list));
 
+    localStorage.setItem('cart_list', JSON.stringify(arr_cart_list));
+    location.reload();
 }
 
